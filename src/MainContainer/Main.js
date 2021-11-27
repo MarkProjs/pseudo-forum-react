@@ -21,8 +21,8 @@ const Main = () => {
         forumList = forumList.filter( (frmId) => {
                          return (frmId.id !== frmId)
                          });
-                         setFroumList(frmId);
-                         console.log('ForumList;', frmId);
+                         setFroumList(forumList);
+                         console.log('ForumList;', forumList);
     }
     return ( 
         <section id="main-content">

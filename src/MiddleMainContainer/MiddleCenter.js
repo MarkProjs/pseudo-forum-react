@@ -1,7 +1,8 @@
 import ForumListItem from "../ForumCenter/ForumListItem";
 
-const MiddleCenter = ({forumList, handleForumdelete}) => {
-
+const MiddleCenter = (props) => {
+    let forumList = props.forumList;
+    let handleForumdelete = props.handleForumdelete;
     return ( 
         <section id="middle-center">
             <section>
