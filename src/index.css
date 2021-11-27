@@ -1,0 +1,369 @@
+import 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* --------------------- general Css -------------------------*/
+
+html, body , div#root, .App
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height:100%; 
+  width:100%;
+  background-color: rgb(215, 222, 223);
+  font-family: "Georgia", serif;
+  
+}
+
+/* --------------------- Header and Footer search ------------------- */
+header, footer {
+  background-image: url("./images/headerFooter.jpg");
+  font-size:1.3em;
+  padding: 1.5em;
+  text-align: start;
+  color:rgb(255, 255, 255);
+  height:15%;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius:13px;
+  height: 40px;
+  text-shadow: 0px 0px 0.5rem rgb(47, 151, 158);
+  }
+
+#search {
+  width: 50%;
+  height: 30px;
+}
+input{
+  color: rgb(138, 137, 137);
+  border-radius: 7px;
+  font-style: italic;
+}
+
+p{
+  margin: -15px 40px 40px 40px;
+  padding:  -10px 40px 40px 40px;
+  font-size: 14px;
+  display: flex;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+h4,h2{
+  margin: 5px;
+}
+
+/* --------------------- Main Main ------------------- */
+#main-content
+  {
+    display: flex;
+    border:2px solid rgb(65, 63, 63);
+    border-radius:1em;
+    justify-content:space-evenly;
+    overflow-y: auto;
+    text-align: center;
+    height: 70%;
+    margin: 5px;
+    padding: 0.2em;;
+    background-color: rgb(197, 197, 193);
+  }
+
+/* --------------------- Left menu ------------------- */
+
+nav.left-menu  {
+  display: flex;
+  flex-direction: column;
+  width:15%; 
+  overflow-y: auto;
+  justify-self: flex-end;
+  border:4px groove rgb(151, 151, 136);
+  border-radius: 13px;
+  padding: 30px;
+  border-radius: 13px;
+  background-image: url("./images/left.jpg");
+}
+nav.left-menu h4{
+  display: flex;
+  justify-content:center;
+  background-color: rgb(21, 58, 65);
+  color: white;
+  padding: 20px;
+  margin: 0;
+  border-radius: 13px;
+  font-size: large;
+  border:2px solid darkgray;
+  box-shadow: inset 4px 3px 2px rgba(83, 211, 194, 0.5),
+    inset 0 -4px 2px rgba(130, 167, 164, 0.5);
+}
+nav.left-menu ul {
+  background-color: rgb(77, 66, 74);
+  border:2px solid darkgray;
+  border-radius: 5px;
+  padding: 0.7em;
+  display: flex;
+  justify-self: end;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: flex-end;
+  border-radius: 13px;
+  box-shadow: inset 3px 2px 1px rgba(39, 92, 85, 0.5),
+             inset 0 -3px 1px rgba(153, 128, 115, 0.5);
+}
+nav.left-menu li  {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  width: 83%;
+  padding: 15px;
+}
+
+nav.left-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 0.4em;
+  margin: 0.1em;
+  border: 3px groove darkgrey;
+  background-color: rgb(29, 13, 13);
+  box-shadow: 0.1px 0.5px 0.5px 2px #888888;
+}
+nav.left-menu li a:hover{
+  background-color:rgb(31, 67, 75);
+  color:  beige;
+  border-radius: 5px;
+}
+
+/* --------------------- middle main ------------------- */
+section.middle-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-y: auto;
+  width:65%; 
+  justify-self: flex-end;
+  border:4px groove rgb(151, 151, 136);
+  border-radius: 13px;
+  padding: 20px 40px 20px 30px;
+  border-radius: 13px;
+  margin: 0px;
+  background-image: url("./images/mainMiddle.jpg");
+  
+}
+      /* --------------------- Middle top  ------------------- */
+      #middle-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+        width: 100%;
+        margin: 0 2px;
+        text-align: center;
+        background-color: rgb(151, 181, 176);
+        border:2px groove rgb(189, 189, 181);
+        height: 14%;
+        border-radius: 10px;
+        padding: 3px;
+      }
+      .dropdown-row{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(151, 181, 176);
+        padding: 3px;
+      }
+
+      .dropdown-row option{
+        display: flex;
+        justify-content: center;
+        padding: 0px 300px 0px 0px;
+      }
+      .dropdown-row label{
+        display: flex;
+        justify-content: center;
+        margin: 0 200px 0 0 ;
+      }
+
+      /* --------------------- Middle Center ------------------- */
+      #middle-center{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        background-color: rgb(146, 166, 169);
+        border:2px groove rgb(189, 189, 181);
+        height: 60%;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 8px 0 0 0;
+        width: 100%;
+      }
+
+       /* --------------------- Middle bottom ------------------- */
+       #middle-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+        text-align: center;
+        background-color: rgb(128, 157, 160);
+        border:2px groove rgb(189, 189, 181);
+        height: 19%;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 11px 0px 0px 0px;
+        width: 100%;
+      }
+
+      .post-submit{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(128, 157, 160);
+      }
+
+      .post-submit textarea{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 5px;
+        padding: 0px;
+        width: 600px;
+        height: 30px;
+      }
+      .post-submit label{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 0 10px 0 0 ;
+      }
+      .post-submit button{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(61, 121, 101);
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 8px 0px 0px 0px;
+        box-shadow: 0.1px 0.5px 0.5px 2px #888888;
+      }
+
+/* --------------------- right column ------------------- */
+section.right-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width:20%; 
+  justify-self: flex-end;
+  border:4px groove rgb(151, 151, 136);
+  border-radius: 13px;
+  padding: 30px;
+  border-radius: 13px;
+  margin: 0px;
+  background-image: url("./images/right.jpg");     
+}
+
+    /* --------------------- ranked topics ------------------- */
+    #ranked-topics{
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(90, 81, 76);
+      border:2px solid darkgray;
+      border-radius: 5px;
+      margin: 0px 0px 8px 0px;
+      width: 100%;
+    }
+
+    /* --------------------- recebt posts ------------------- */
+    #recent-posts{
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(90, 81, 76);
+      border:2px solid darkgray;
+      border-radius: 5px;
+      margin: 8px 0px 8px 0px;
+      width: 100%;
+    }
+
+    /* --------------------- stat posts ------------------- */
+    #stats-posts{
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(90, 81, 76);
+      border:2px solid darkgray;
+      border-radius: 5px;
+      margin: 8px 0px 8px 0px;
+      width: 100%;
+    }
+/* --------------------- forum Center ------------------- */
+section#forum-items
+{
+  padding: 1em;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: rgb(174, 202, 202);
+  border-radius: 5px;
+}
+section.list-single-item {
+  border:2px solid rgb(60, 112, 106) ;
+  border-radius: 2px;
+  padding: 8x;
+  background-color: rgb(201, 214, 213);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: inset 3px 3px 3px rgba(31, 95, 87, 0.5),
+              inset 0px -4px 2px rgba(11, 49, 46, 0.5);
+              
+}
+section.list-single-item:hover {
+  border:2px solid darkgray ;
+  background-color: rgb(217, 238, 232);
+  box-shadow: inset 7px 5px 20px rgba(194, 214, 64, 0.5),
+              inset 5px -5px 2px rgba(133, 68, 140, 0.5);
+              border-radius: 5px;
+}
+
+section.list-single-item section.item-row-info{
+  border:1px solid rgb(99, 129, 122);
+  padding:5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+section.list-single-item section.item-row-info label 
+{
+  border: 0.5px solid rgb(172, 135, 135);
+  box-shadow: 0.1px 0.1px 0.5px 0.5px #888888;
+  padding:5px;
+  border-radius: 5px;
+}
+section.list-single-item section.item-row-info input 
+{
+  border: 0.5px solid rgb(172, 135, 135);
+  box-shadow: 0.1px 0.1px 0.5px 0.5px #888888;
+  border-radius: 5px;
+  padding:5px;
+  width: 70%;
+} 
+
