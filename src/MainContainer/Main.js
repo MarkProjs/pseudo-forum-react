@@ -15,14 +15,15 @@ const Main = () => {
     ]);
 
     function handleForumdelete(frmId){
-        console.log(frmId);
+        // console.log(frmId);
         console.log("delete forum", frmId);
-    
-        forumList = forumList.filter( (frmId) => {
-                         return (frmId.id !== frmId)
-                         });
-                         setFroumList(forumList);
-                         console.log('ForumList;', forumList);
+        setFroumList(forumList.filter((frm)=>frm.id !== frmId));
+        // forumList = forumList.filter( (frmId) => {
+        //                  return (frmId.id !== frmId)
+        //                  });
+        //                  setFroumList(forumList);
+        //                  console.log('ForumList;', forumList);
+       console.log("hhhhhhhhhhhhhhh");
     }
     return ( 
         <section id="main-content">
