@@ -17,13 +17,9 @@ const Main = () => {
     function handleForumdelete(frmId){
         // console.log(frmId);
         console.log("delete forum", frmId);
-        setFroumList(forumList.filter((frm)=>frm.id !== frmId));
-        // forumList = forumList.filter( (frmId) => {
-        //                  return (frmId.id !== frmId)
-        //                  });
-        //                  setFroumList(forumList);
-        //                  console.log('ForumList;', forumList);
-       console.log("hhhhhhhhhhhhhhh");
+        setFroumList(forumList.filter((frm)=>{
+            return frm.id !== frmId;
+        }));
     }
     return ( 
         <section id="main-content">
