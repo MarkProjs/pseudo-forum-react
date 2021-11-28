@@ -5,7 +5,8 @@ const FromListItem = (props) => {
     let forumList = props.forumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
-    let dislike = props.dislike
+    let handleForumdislike = props.handleForumdislike;
+   
     return (
         <section id="forum-list">
             {forumList.map((frm) => (
@@ -13,10 +14,18 @@ const FromListItem = (props) => {
                     <section className="item-row-info">
                         <label htmlFor="">add icons {frm.id}</label>
                         <input type="text" value={frm["text"]} />
-                        <img src="./like-button.png" id="like" />
-                        <img src="./dislike-icon-5.png" id="dislike" />
+                        <img src="./like-button.png" id="like" 
+                        onClick={()=>{
+                            handleForumLike(frm.likes);
+                        }}
+                        alt="like"/>
+                        <img src="./dislike-icon-5.png" id="dislike"
+                            onClick={() => {
+                                handleForumdislike(frm.likes);
+                                
+                            }} alt="dislike"/>
                     </section>
-                   
+
                     <section className="item-row-info">
                         <label htmlFor="">by: {frm["author"]}</label>
                         <label htmlFor="">{frm["date"]}</label>

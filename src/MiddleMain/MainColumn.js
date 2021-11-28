@@ -7,7 +7,7 @@ const MainColumn = (props) => {
     let forumList = props.forumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
-    let dislike = props.dislike
+    let handleForumdislike = props.handleForumdislike;
     return ( 
         <section className="middle-main">
             <MiddleTop />
@@ -15,7 +15,7 @@ const MainColumn = (props) => {
                             forumList = {forumList}
                             handleForumdelete = {handleForumdelete}
                             handleForumLike = {handleForumLike}
-                            dislike = {dislike}
+                            handleForumdislike={handleForumdislike}
             />
             <MiddleBottom />
             
