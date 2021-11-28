@@ -21,16 +21,23 @@ const Main = () => {
             return frm.id !== frmId;
         }));
     }
-    
-    function handleForumLike(likes){
-        console.log("like");
+    let [likeUnlike, setLikeUlike]=useState(0);
+    function handleForumLike(likes ,index){
+        // if(likeUnlike>0){
+        //     setLikeUlike(likeUnlike=0);
+        // }
+        
+        let likeId = document.getElementsByClassName("likesAndDislike");  
+        setLikeUlike(likeUnlike+1);
+        likeUnlike+=likes;
+        likeId[index].innerText="Likes: "+likeUnlike;
+        // setLikeUlike(likeUnlike=0);
     }
 
     function handleForumdislike(likes){
         console.log("dislike");
     }
-
-   
+ 
     return ( 
         <section id="main-content">
             <LeftColumn />
