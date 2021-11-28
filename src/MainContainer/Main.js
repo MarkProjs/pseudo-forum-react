@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const Main = () => {
-
+    let dislike ='../images/dislike-icon-5.png';
     let [forumList, setFroumList] = useState([
         {"id": 1, "topic_id": "cat1_topic1_post1", "parentId": "topic1", "author": "nasr", "date": "2021-11-10 12:10", "text": "Are You Making These Coding using REactJS Mistakes?", "rate": 2.1, "likes": 0, "replies": 10},
         {"id": 2, "topic_id": "cat1_topic1_post1", "parentId": "topic1", "author": "badr", "date": "2021-11-14 12:30", "text": "This is a post TWO topic- SuperEasy Ways To Learn And Use REactJS", "rate": 2.1, "likes": 0, "replies": 5 },
@@ -21,12 +21,19 @@ const Main = () => {
             return frm.id !== frmId;
         }));
     }
+    function handleForumLike(frmId){
+        console.log("hhhhhh");
+        // setFroumList(forumList.likes+1);
+    }
     return ( 
         <section id="main-content">
             <LeftColumn />
             <MainColum 
                  forumList = {forumList}
                  handleForumdelete = {handleForumdelete}
+                 handleForumLike = {handleForumLike}
+                 dislike = {dislike}
+                
                  />
             <RightColumn />
         </section>
