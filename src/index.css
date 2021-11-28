@@ -60,10 +60,12 @@ input{
 #like{
   width: 5.2%;
   height: 5.2%;
+  cursor: pointer;
 }
 #dislike{
   width: 5%;
   height: 5%;
+  cursor: pointer;
 }
 p{
   margin: -15px 40px 40px 40px;
@@ -130,6 +132,7 @@ nav.left-menu ul {
   flex-direction: column;
   list-style-type: none;
   justify-content: flex-end;
+  text-align: center;
   border-radius: 13px;
   box-shadow: inset 3px 2px 1px rgba(39, 92, 85, 0.5),
              inset 0 -3px 1px rgba(153, 128, 115, 0.5);
@@ -139,14 +142,14 @@ nav.left-menu li  {
   flex-direction: column;
   justify-content:center;
   text-align: center;
-  width: 83%;
+  width: 84%;
   padding: 15px;
 }
 
 nav.left-menu li a {
   text-decoration: none;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 5px;
   padding: 0.4em;
   margin: 0.1em;
@@ -158,6 +161,7 @@ nav.left-menu li a:hover{
   background-color:rgb(31, 67, 75);
   color:  beige;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 /* --------------------- middle main ------------------- */
@@ -272,9 +276,14 @@ section.middle-main{
         color: white;
         border-radius: 5px;
         padding: 5px;
+        width: 100px;
         margin: 8px 0px 0px 0px;
         box-shadow: 0.1px 0.5px 0.5px 2px #888888;
         cursor: pointer;
+      }    
+      .post-submit button:hover{
+        font-weight: bold;
+        background-color: rgb(38, 92, 85);
       }
 
 /* --------------------- right column ------------------- */
@@ -350,10 +359,11 @@ section.list-single-item {
 }
 section.list-single-item:hover {
   border:2px solid darkgray ;
+  border-radius: 5px;
+  font-style: italic;
   background-color: rgb(217, 238, 232);
   box-shadow: inset 7px 5px 20px rgba(194, 214, 64, 0.5),
-              inset 5px -5px 2px rgba(133, 68, 140, 0.5);
-              border-radius: 5px;
+              inset 5px -5px 2px rgba(133, 68, 140, 0.5);              
 }
 
 section.list-single-item section.item-row-info{
@@ -369,14 +379,58 @@ section.list-single-item section.item-row-info label
   box-shadow: 0.1px 0.1px 0.5px 0.5px #888888;
   padding:5px;
   border-radius: 5px;
+  color: rgb(90, 87, 87);
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 section.list-single-item section.item-row-info input 
 {
   border: 0.5px solid rgb(172, 135, 135);
   box-shadow: 0.1px 0.1px 0.5px 0.5px #888888;
+  color: black;
+  font-style: normal;
+  font-size: 13px;
   border-radius: 5px;
-  padding:5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px;
   width: 70%;
   
 } 
 
+/* ---------------------------- delete button ---------------------- */
+#forum-list button.forum-delete{
+  padding: 3px 8px;
+  width: 65px;
+  height: 28px;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+   
+}
+
+#forum-list button.forum-delete:hover{
+  background-color: rgba(218, 72, 72, 0.871);
+  font-weight: bold;
+  box-shadow: inset 1px 2px 1px rgba(214, 43, 12, 0.5),
+              inset 1px -3px 1px rgba(133, 68, 140, 0.5);
+} 
+
+/* --------------------- Ranked Topic ----------------------------*/
+#ranked-topics{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  overflow-y: auto;
+  color: white;
+}
+#ranked-topics h4{
+  background-color: rgb(53, 22, 22);
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  
+}
+/*---------------------- Recent Posts ----------------------------*/
+
+/*----------------------Stats Post -------------------------------*/

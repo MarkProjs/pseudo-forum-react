@@ -2,7 +2,7 @@ import LeftColumn from "../Left/LeftColumn";
 import MainColum from "../MiddleMain/MainColumn";
 import RightColumn from "../Right/RightColumn";
 import React, { useState } from "react";
-import FromListItem from "../ForumCenter/ForumListItem";
+//import FromListItem from "../ForumCenter/ForumListItem";
 
 
 const Main = () => {
@@ -41,7 +41,9 @@ const Main = () => {
                  handleForumdislike={handleForumdislike}
                 
                  />
-            <RightColumn />
+            <RightColumn 
+                forumList = {forumList}
+                />
         </section>
      );
 }
