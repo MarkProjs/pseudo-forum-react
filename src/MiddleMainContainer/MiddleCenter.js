@@ -4,7 +4,7 @@ const MiddleCenter = (props) => {
     let forumList = props.forumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
-    let dislike = props.dislike
+    let handleForumdislike = props.handleForumdislike;
     return ( 
         <section id="middle-center">
             <section>
@@ -12,7 +12,7 @@ const MiddleCenter = (props) => {
                            forumList={forumList}
                            handleForumdelete = {handleForumdelete}
                            handleForumLike = {handleForumLike}
-                           dislike = {dislike}
+                           handleForumdislike={handleForumdislike}
                            />
             </section>
 
