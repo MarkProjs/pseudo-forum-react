@@ -246,6 +246,7 @@ section.middle-main{
         justify-content: center;
         text-align: center;
         background-color: rgb(128, 157, 160);
+        
       }
 
       .post-submit textarea{
@@ -273,6 +274,7 @@ section.middle-main{
         padding: 5px;
         margin: 8px 0px 0px 0px;
         box-shadow: 0.1px 0.5px 0.5px 2px #888888;
+        cursor: pointer;
       }
 
 /* --------------------- right column ------------------- */
@@ -375,5 +377,6 @@ section.list-single-item section.item-row-info input
   border-radius: 5px;
   padding:5px;
   width: 70%;
+  
 } 
 
