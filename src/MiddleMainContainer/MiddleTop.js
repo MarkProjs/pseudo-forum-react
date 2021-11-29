@@ -1,6 +1,21 @@
+import React from "react";
+
 const MiddleTop = () => {
-    return ( 
-        <section id="middle-top">
+	class Option extends React.Component{
+		constructor(props){
+			super(props)
+		// this.componentDidCatch=this.componentDidCatch.bind(this)
+		}
+		// componentDidMount(){
+		// 	fetch("../forum.json")
+		// 	.then((resp)=>{resp.json})
+		// 	.then((data)=>{
+		// 		console.log(data);
+		// 	})
+		// }
+		render(){
+			return(
+				<section id="middle-top">
 
             <section class="dropdown-row">
 				<label for="category">Base Currency</label>
@@ -18,7 +33,12 @@ const MiddleTop = () => {
 			</section>
 
         </section>
-     );
+			);
+		}
+	}
+    return ( 
+        <Option> </Option>
+	);
 }
  
 export default MiddleTop;
