@@ -41,7 +41,7 @@ const FromListItem = (props) => {
                     <section className="item-row-info">
                         <label htmlFor="">by: {frm["author"]}</label>
                         <label htmlFor="">{frm["date"]}</label>
-                        <label className="likesAndDislike" htmlFor="">Likes: {frm["likes"]} {likeUnlike}</label>
+                        <label className="likesAndDislike" htmlFor="">Likes: {frm["likes"]}</label>
                         <button className="forum-delete"
                             onClick={() => {
                                 handleForumdelete(frm.id);

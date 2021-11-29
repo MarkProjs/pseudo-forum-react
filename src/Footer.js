@@ -6,7 +6,7 @@ const Footer = () => {
                 student01 (Maedeh Hassani, 1942575) <br/>
                 student02 (Mark Agluba, 1533777) <br/>
                 student03 (Huang Wanting, 2034421) <br/>
-                Copyright Fall 2021
+                &copy; 2021
             </p>
         </footer>
      );

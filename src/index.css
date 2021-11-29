@@ -20,8 +20,7 @@ html, body , div#root, .App
 {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   height:100%; 
   width:100%;
   background-color: rgb(215, 222, 223);
@@ -37,17 +36,16 @@ header, footer {
   background-image: url("./images/headerFooter.jpg");
   font-size:1.3em;
   padding: 1.5em;
-  text-align: start;
+  /* text-align: start; */
   color:rgb(255, 255, 255);
-  height: 15%;
-  margin: 5px;
-  display: flex;
-  justify-content: space-between;
   border-radius:13px;
-  height: 40px;
+  height: 20px;
   text-shadow: 0px 0px 0.5rem rgb(47, 151, 158);
-  }
 
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  }
 #search {
   width: 50%;
   height: 30px;
@@ -68,27 +66,31 @@ input{
   cursor: pointer;
 }
 p{
-  margin: -15px 40px 40px 40px;
+  font-size: 14px;
+  /* margin: -15px 40px 40px 40px;
   padding:  -10px 40px 40px 40px;
   font-size: 14px;
-  display: flex;
+  display: flex; */
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 h4,h2{
   margin: 5px;
+
 }
 
 /* --------------------- Main Main ------------------- */
 #main-content
   {
     display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 100%;
+    /* overflow: auto; */
+    /* text-align: center; */
+ 
     border:2px solid rgb(65, 63, 63);
     border-radius:1em;
-    justify-content:space-evenly;
-    overflow-y: auto;
-    text-align: center;
     height: 70%;
     margin: 5px;
     padding: 0.2em;;
@@ -100,39 +102,47 @@ h4,h2{
 nav.left-menu  {
   display: flex;
   flex-direction: column;
-  width:15%; 
-  overflow-y: auto;
-  justify-self: flex-end;
+  align-items: center;
+  justify-self: center;
+  flex-shrink: 1;
+  /* overflow:auto; */
+  /* flex-grow: 1; */
+  height: 98%;
+  width: 15%; 
   border:4px groove rgb(151, 151, 136);
   border-radius: 13px;
-  padding: 30px;
+  /* padding: 30px; */
   border-radius: 13px;
   background-image: url("./images/left.jpg");
 }
 nav.left-menu h4{
   display: flex;
   justify-content:center;
+  align-items: center;
   background-color: rgb(21, 58, 65);
   color: white;
   padding: 20px;
-  margin: 0;
+  margin: 10px;
   border-radius: 13px;
   font-size: large;
   border:2px solid darkgray;
   box-shadow: inset 4px 3px 2px rgba(83, 211, 194, 0.5),
     inset 0 -4px 2px rgba(130, 167, 164, 0.5);
+    width: 60%;
 }
 nav.left-menu ul {
   background-color: rgb(77, 66, 74);
   border:2px solid darkgray;
   border-radius: 5px;
+  width: 70%;
   padding: 0.7em;
   display: flex;
-  justify-self: end;
+  /* justify-self: end; */
   flex-direction: column;
   list-style-type: none;
-  justify-content: flex-end;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
   border-radius: 13px;
   box-shadow: inset 3px 2px 1px rgba(39, 92, 85, 0.5),
              inset 0 -3px 1px rgba(153, 128, 115, 0.5);
@@ -142,7 +152,7 @@ nav.left-menu li  {
   flex-direction: column;
   justify-content:center;
   text-align: center;
-  width: 84%;
+  width: 90%;
   padding: 15px;
 }
 
@@ -168,15 +178,15 @@ nav.left-menu li a:hover{
 section.middle-main{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  overflow-y: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  
   width:65%; 
+  height: 90%;
   justify-self: flex-end;
   border:4px groove rgb(151, 151, 136);
   border-radius: 13px;
   padding: 20px 40px 20px 30px;
-  border-radius: 13px;
   margin: 0px;
   background-image: url("./images/mainMiddle.jpg");
   
@@ -185,48 +195,50 @@ section.middle-main{
       #middle-top{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        overflow-y: auto;
+        justify-content: space-evenly;
+        align-items: center;
         width: 100%;
-        margin: 0 2px;
-        text-align: center;
+        height: 18%;
+        margin-bottom: 3px;
+        /* margin: 0 2px; */
+        /* text-align: center; */
         background-color: rgb(151, 181, 176);
         border:2px groove rgb(189, 189, 181);
-        height: 14%;
         border-radius: 10px;
-        padding: 3px;
+        /* padding: 3px; */
       }
       .dropdown-row{
+        width: 90%;
+        height: 50%;
         display: flex;
         justify-content: center;
-        text-align: center;
+        align-items: center;
         background-color: rgb(151, 181, 176);
-        padding: 3px;
       }
-
+      #category,#topic{
+        width: 80%;
+      }
       .dropdown-row option{
-        display: flex;
-        justify-content: center;
-        padding: 0px 300px 0px 0px;
+        flex-grow: 1;
       }
       .dropdown-row label{
-        display: flex;
-        justify-content: center;
-        margin: 0 200px 0 0 ;
+        flex-grow: 1;
+        /* margin: 0 200px 0 0 ; */
       }
 
       /* --------------------- Middle Center ------------------- */
       #middle-center{
+        flex-shrink: 1;
         display: flex;
         flex-direction: column;
         overflow-y: auto;
         background-color: rgb(94, 107, 109);
         border:2px groove rgb(189, 189, 181);
-        height: 60%;
-        border-radius: 10px;
+        height: 65%;
+        border-radius: 13px;
         padding: 5px;
         margin: 8px 0 0 0;
-        width: 100%;
+        width: 98%;
       }
 
        /* --------------------- Middle bottom ------------------- */
@@ -234,11 +246,11 @@ section.middle-main{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        overflow-y: auto;
+        /* overflow-y: auto; */
         text-align: center;
         background-color: rgb(128, 157, 160);
         border:2px groove rgb(189, 189, 181);
-        height: 19%;
+        height: 18%;
         border-radius: 10px;
         padding: 5px;
         margin: 11px 0px 0px 0px;
@@ -290,16 +302,18 @@ section.middle-main{
 section.right-column{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  width:20%; 
+  align-items: center;
   justify-self: flex-end;
+  flex-shrink: 1;
+  /* overflow:auto; */
+  /* flex-grow: 1; */
+  height: 98%;
+  width: 15%; 
   border:4px groove rgb(151, 151, 136);
   border-radius: 13px;
-  padding: 30px;
+  /* padding: 30px; */
   border-radius: 13px;
-  margin: 0px;
-  background-image: url("./images/right.jpg");     
+  background-image: url("./images/left.jpg");
 }
 
     /* --------------------- ranked topics ------------------- */
@@ -309,8 +323,8 @@ section.right-column{
       background-color: rgb(90, 81, 76);
       border:2px solid darkgray;
       border-radius: 5px;
-      margin: 0px 0px 8px 0px;
-      width: 100%;
+      margin: 10px 0px 8px 0px;
+      width: 90%;
     }
 
     /* --------------------- recebt posts ------------------- */
@@ -321,7 +335,7 @@ section.right-column{
       border:2px solid darkgray;
       border-radius: 5px;
       margin: 8px 0px 8px 0px;
-      width: 100%;
+      width: 90%;
     }
 
     /* --------------------- stat posts ------------------- */
@@ -332,7 +346,7 @@ section.right-column{
       border:2px solid darkgray;
       border-radius: 5px;
       margin: 8px 0px 8px 0px;
-      width: 100%;
+      width: 90%;
     }
 /* --------------------- forum Center ------------------- */
 section#forum-items
