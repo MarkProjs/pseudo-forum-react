@@ -8,10 +8,14 @@ const MainColumn = (props) => {
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
+    let forumData = props.forumData;
     return ( 
         <section className="middle-main">
-            <MiddleTop />
+            <MiddleTop
+                 forumData={forumData}
+             />
             <MiddleCenter   
+                           
                             forumList = {forumList}
                             handleForumdelete = {handleForumdelete}
                             handleForumLike = {handleForumLike}

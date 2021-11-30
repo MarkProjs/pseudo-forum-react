@@ -1,44 +1,48 @@
 import React from "react";
 
-const MiddleTop = () => {
-	class Option extends React.Component{
-		constructor(props){
-			super(props)
-		// this.componentDidCatch=this.componentDidCatch.bind(this)
+const MiddleTop = (props) => {
+	let forumData = props.forumData;
+	function addOptions(options) {
+		console.log(options);
+		let oldcategory = document.getElementById("category");
+		if (oldcategory) {
+			oldcategory.remove();
 		}
-		// componentDidMount(){
-		// 	fetch("../forum.json")
-		// 	.then((resp)=>{resp.json})
-		// 	.then((data)=>{
-		// 		console.log(data);
-		// 	})
-		// }
-		render(){
-			return(
-				<section id="middle-top">
+		let dropdown_row = document.getElementsByClassName("dropdown-row");
+		let category = document.createElement("select");
+		category.id = "category";
+		dropdown_row[0].appendChild(category);
+		let selectoption = document.createElement('option');
+		selectoption.innerText="Select a category";
+		category.appendChild(selectoption);
+		Object.keys(options).forEach((key) => {
+			let childNode = document.createElement('option');
+			childNode.innerText = `${options[key].name}`;
+			category.appendChild(childNode);
+		});
+	}
+	return (
+		<section id="middle-top">
 
-            <section class="dropdown-row">
+			<section class="dropdown-row">
 				<label for="category">Base Currency</label>
-					<select name="category" id="category">
-						<option value="">Select a category</option>
+				<select name="category" id="category" onMouseEnter={() => {
+					addOptions(forumData);
+				}}>
+					<option value="">Select a category</option>
 
-					</select>											
+				</select>
 			</section>
 			<section class="dropdown-row">
 				<label for="topic">To Currency</label>
-					<select name="tipic" id="topic">
-						<option value="">Select a topic</option>
+				<select name="tipic" id="topic">
+					<option value="">Select a topic</option>
 
-					</select>							
+				</select>
 			</section>
 
-        </section>
-			);
-		}
-	}
-    return ( 
-        <Option> </Option>
+		</section>
 	);
 }
- 
+
 export default MiddleTop;

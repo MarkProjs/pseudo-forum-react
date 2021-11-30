@@ -1,14 +1,25 @@
 import LeftColumn from "../Left/LeftColumn";
 import MainColum from "../MiddleMain/MainColumn";
 import RightColumn from "../Right/RightColumn";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import FromListItem from "../ForumCenter/ForumListItem";
 
 
 const Main = () => {
-
-
-
+    let [forumData, setFroumData] = useState(null);
+    useEffect(() => {
+        let url = 'http://localhost:3001/categories';
+        fetch(url).then((resp) => {
+            if (!resp.ok) {
+                throw new Error('http pbm status', resp.Error);
+            } else {
+                return resp.json();
+            }
+        }).then(data => {
+            setFroumData(data);
+        }).catch(err => console.log(err.message));
+    }, []);
+    // console.log(forumData[0].name);
     let [forumList, setFroumList] = useState([
         { "id": 1, "topic_id": "cat1_topic1_post1", "parentId": "topic1", "author": "nasr", "date": "2021-11-10 12:10", "text": "Are You Making These Coding using REactJS Mistakes?", "rate": 2.1, "likes": 0, "replies": 10 },
         { "id": 2, "topic_id": "cat1_topic1_post1", "parentId": "topic1", "author": "badr", "date": "2021-11-14 12:30", "text": "This is a post TWO topic- SuperEasy Ways To Learn And Use REactJS", "rate": 2.1, "likes": 0, "replies": 5 },
@@ -26,28 +37,39 @@ const Main = () => {
 
     function handleForumLike(frm, index) {
         let likeId = document.getElementsByClassName("likesAndDislike");
-        frm.likes=frm.likes+1;
+        frm.likes = frm.likes + 1;
         likeId[index].innerText = "Likes: " + `${frm.likes++}`;
-        frm.likes=frm.likes-1;
+        frm.likes = frm.likes - 1;
     }
 
     function handleForumdislike(frm, index) {
         let likeId = document.getElementsByClassName("likesAndDislike");
-        frm.likes=frm.likes-1;
+        frm.likes = frm.likes - 1;
         likeId[index].innerText = "Likes: " + `${frm.likes--}`;
-        frm.likes=frm.likes+1;
+        frm.likes = frm.likes + 1;
     }
-
+    function addOptions(options) {
+        console.log(options);
+        let selectList = document.getElementsByTagName('select');
+        for (let i = 0; i < selectList.length; i++) {
+            Object.keys(options).forEach((key) => {
+                let childNode = document.createElement('option');
+                childNode.innerText = `${options[key].name}`;
+                selectList[i].appendChild(childNode);
+            });
+        }
+    }
     return (
         <section id="main-content">
             <LeftColumn />
-            <MainColum
+            {forumData && <MainColum
+                forumData={forumData}
                 forumList={forumList}
                 handleForumdelete={handleForumdelete}
                 handleForumLike={handleForumLike}
                 handleForumdislike={handleForumdislike}
 
-            />
+            />}
             <RightColumn
                 forumList={forumList}
             />
