@@ -14,8 +14,7 @@ const MainColumn = (props) => {
             <MiddleTop
                  forumData={forumData}
              />
-            <MiddleCenter   
-                           
+            <MiddleCenter   forumData = {forumData}
                             forumList = {forumList}
                             handleForumdelete = {handleForumdelete}
                             handleForumLike = {handleForumLike}

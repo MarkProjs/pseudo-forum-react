@@ -5,7 +5,7 @@ const FromListItem = (props) => {
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
-
+    let forumData = props.forumData;
     return (
         <section id="forum-list">
             {forumList.map((frm, index) => (

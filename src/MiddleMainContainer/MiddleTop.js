@@ -18,6 +18,7 @@ const MiddleTop = (props) => {
 		category.appendChild(selectoption);
 		Object.keys(options).forEach((key) => {
 			let childNode = document.createElement('option');
+			childNode.setAttribute("value", `${options[key].name}`);
 			childNode.innerText = `${options[key].name}`;
 			category.appendChild(childNode);
 		});
@@ -28,15 +29,27 @@ const MiddleTop = (props) => {
 		if (oldtopic) {
 			oldtopic.remove();
 		}
+		let categoryValue = document.getElementById("category").value;
+		let objTopic = options.find((cat)=>{
+			if (cat.name == categoryValue) {
+				return cat;
+			}
+		});
 		let topic = document.createElement("select");
 		topic.id = "topic";
 		dropdown_row[1].appendChild(topic);
 		let selectoption = document.createElement('option');
 		selectoption.innerText = "Select a topic";
-		topic.appendChild(selectoption);
-		getToOp(options,topic);
+		objTopic.topicList.forEach((tpc)=>{
+			let optionTopic = document.createElement('option');
+			optionTopic.setAttribute("value", `${tpc.topic_title}`);
+			optionTopic.innerText = `${tpc.topic_title}`;
+			topic.appendChild(optionTopic);
+		});
+		/*topic.appendChild(selectoption);
+		getToOp(options,topic);*/
 	}
-	function getToOp(options,topic){
+	/*function getToOp(options,topic){
 		Object.keys(options).forEach((key) => {
 			let optionId = options[key].id;
 			if (optionId === 1) {
@@ -58,12 +71,12 @@ const MiddleTop = (props) => {
 			topic.appendChild(childNode);
 			console.log(opList[key].topic_title);
 		});
-	}
+	}*/
 	return (
 		<section id="middle-top">
 
 			<section class="dropdown-row">
-				<label for="category">Base Currency</label>
+				<label for="category">Categories</label>
 				<select name="category" id="category" onMouseEnter={() => {
 					addBaseOptions(forumData);
 				}}>
@@ -72,8 +85,8 @@ const MiddleTop = (props) => {
 				</select>
 			</section>
 			<section class="dropdown-row">
-				<label for="topic">To Currency</label>
-				<select name="tipic" id="topic" onMouseEnter={() => {
+				<label for="topic">Related Topics</label>
+				<select name="topic" id="topic" on={() => {
 					addToOptions(forumData);
 				}}>
 					<option value="">Select a topic</option>
