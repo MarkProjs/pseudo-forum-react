@@ -7,6 +7,8 @@ import React, { useEffect, useState } from "react";
 
 const Main = () => {
     let [forumData, setFroumData] = useState(null);
+    //npx json-server --watch data/forum.json --port 3001
+    console.log("npx json-server --watch data/forum.json --port 3001");
     useEffect(() => {
         let url = 'http://localhost:3001/categories';
         fetch(url).then((resp) => {
@@ -48,17 +50,17 @@ const Main = () => {
         likeId[index].innerText = "Likes: " + `${frm.likes--}`;
         frm.likes = frm.likes + 1;
     }
-    function addOptions(options) {
-        console.log(options);
-        let selectList = document.getElementsByTagName('select');
-        for (let i = 0; i < selectList.length; i++) {
-            Object.keys(options).forEach((key) => {
-                let childNode = document.createElement('option');
-                childNode.innerText = `${options[key].name}`;
-                selectList[i].appendChild(childNode);
-            });
-        }
-    }
+    // function addOptions(options) {
+    //     console.log(options);
+    //     let selectList = document.getElementsByTagName('select');
+    //     for (let i = 0; i < selectList.length; i++) {
+    //         Object.keys(options).forEach((key) => {
+    //             let childNode = document.createElement('option');
+    //             childNode.innerText = `${options[key].name}`;
+    //             selectList[i].appendChild(childNode);
+    //         });
+    //     }
+    // }
     return (
         <section id="main-content">
             <LeftColumn />
