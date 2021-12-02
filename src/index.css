@@ -202,7 +202,7 @@ section.middle-main{
         margin-bottom: 3px;
         /* margin: 0 2px; */
         /* text-align: center; */
-        background-color: rgb(151, 181, 176);
+        background-color: rgb(128, 157, 160);
         border:2px groove rgb(189, 189, 181);
         border-radius: 10px;
         /* padding: 3px; */
@@ -213,7 +213,7 @@ section.middle-main{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(151, 181, 176);
+        background-color: rgb(128, 157, 160);
       }
       #category,#topic{
         width: 80%;
