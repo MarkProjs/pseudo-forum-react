@@ -5,8 +5,6 @@ import MiddleTop from "../MiddleMainContainer/MiddleTop";
 
 
 const MainColumn = (props) => {
-    let forumList = props.forumList;
-    let setFroumList=props.setFroumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
@@ -22,10 +20,8 @@ const MainColumn = (props) => {
              />
             <MiddleCenter   
                             forumData = {forumData}
-                            forumList = {forumList}
 
                             setPost={setPost}
-                            setFroumList={setFroumList}
                             handleForumdelete = {handleForumdelete}
                             handleForumLike = {handleForumLike}
                             handleForumdislike={handleForumdislike}
