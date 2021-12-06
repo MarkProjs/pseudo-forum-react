@@ -1,15 +1,14 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState } from 'react';
 
 
 const MiddleTop = (props) => {
 	let forumData = props.forumData;
 	let dropdown_row = document.getElementsByClassName("dropdown-row");
-
-
+	let [post, setPost]=useState(null);
+	
 	useEffect(() => {
 		addBaseOptions(forumData);
-
-	}, [forumData]);
+	});
 
 
 	function addBaseOptions(forumData) {
@@ -55,15 +54,92 @@ const MiddleTop = (props) => {
 		} else {
 			options["topicList"].map((tpc) => {
 				let optionTopic = document.createElement('option');
-				// console.log(tpc);
 				optionTopic.setAttribute("value", `${tpc.topic_title}`);
 				optionTopic.innerText = `${tpc.topic_title}`;
 				topic.appendChild(optionTopic);
+				topic.addEventListener('click', () => {
+					showPost(forumData);
+				});
 			});
 		}
 	}
 
+// 	function showPost(tpc) {
+// 		let topic = document.getElementById("topic");
+// 		let newPost =[];
+		
+// 		Object.keys(tpc).find((elem)=>{
+// 			if(tpc.topic_title===topic.value){
+// 				newPost = tpc["listPosts"];
+// 				return  tpc["listPosts"];
+// 			}
+// 		});
+// 		newPost.map((elem)=>{
+// 			console.log(newPost[elem],"lllllll");
+// 			// let section = document.createElement('section');
+// 			// forumlist.appendChild(section);
+// 			// section.innerHTML=`${
+// 			// 	<button>${elem.id} </button>
+// 			// }`
+// 		});
+// 	}
+useEffect(()=>[
+	setPost(post)
+],[post]);
+function createElem(newPost){
+	// console.log(newPost,"hhhhh");
+	let forumlist = document.getElementById("forum-list");
+	
+    Object.keys(newPost).map((elem)=>{
+		console.log(newPost[elem]);
+		let section = document.createElement("section");
+		forumlist.appendChild(section);
+		forumlist.innerHTML=`<section className="list-single-item" key=>
+					<section className="item-row-info">
+                        <label htmlFor="">add icons </label>
+                        <input type="text" value={} />
+                        <img src="./like-button.png" id="like" alt="like" onClick={() => {
+                           
 
+                        }} />
+                        <img src="./dislike-icon-5.png" id="dislike"
+                            onClick={() => {
+                              
+                            }} alt="dislike" />
+                    </section>
+		</section>`;
+	})
+}
+function showPost(forumData) {
+        let topic = document.getElementById("topic").value;
+        let category = document.getElementById("category").value;
+        let newPost = {};
+            Object.keys(forumData).find((elem) => {
+                if (forumData[elem].name === category) {
+                    // console.log("yes",options[elem]);
+                    newPost = forumData[elem];
+                    return forumData[elem];
+                }
+            });
+
+			console.log(newPost);
+    //  let nesListPost = {};
+
+    //         Object.keys(newPost).find((elem) => {
+    //             if (newPost.topicList.topic_title === topic) {
+    //                 newPost = newPost.topicList.topic_title;
+    //                 return newPost[elem];
+    //             }
+    //         });
+
+    setPost(newPost);
+        //    console.log(newPost,"=========");
+		//    let topicTag = document.getElementById("topic");
+		//    topicTag.addEventListener('click', () => {
+			createElem(newPost);
+		// });
+		console.log(post);
+    }
 
 	return (
 		<section id="middle-top">
@@ -75,7 +151,9 @@ const MiddleTop = (props) => {
 			</section>
 			<section class="dropdown-row">
 				<label htmlFor="topic">Related Topics</label>
-				<select name="topic" id="topic">
+				<select name="topic" id="topic" onClick={()=>{
+					// showPost(forumData);
+				}}>
 					<option value="">Select a topic</option>
 				</select>
 			</section>

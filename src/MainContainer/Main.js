@@ -21,12 +21,35 @@ const Main = () => {
             }
         }).then(data => {
             setFroumData(data);
+            // showPost(data);
+
         }).catch(err => console.log(err.message));
     }, []);
 
-    useEffect(()=>{
-        
-    },[]);
+//     useEffect(()=>{
+//     showPost(forumData);
+// })
+//     function showPost(forumData) {
+//         let topic = document.getElementById("topic").value;
+//         let category = document.getElementById("category").value;
+//         let newPost = {};
+//             Object.keys(forumData).find((elem) => {
+//                 if (forumData[elem].name === category) {
+//                     // console.log("yes",options[elem]);
+//                     newPost = forumData[elem];
+//                     return forumData[elem];
+//                 }
+//             });
+//             Object.keys(newPost).find((elem) => {
+//                 if (newPost[elem].topicList === topic) {
+//                     newPost = newPost[elem];
+//                     return newPost[elem];
+//                 }
+//             });
+//     setPost(newPost);
+//     console.log(newPost,"**************");
+//     }    
+    
     
     let [forumList, setFroumList] = useState([
         { "id": 1, "topic_id": "cat1_topic1_post1", "parentId": "topic1", "author": "nasr", "date": "2021-11-10 12:10", "text": "Are You Making These Coding using REactJS Mistakes?", "rate": 2.1, "likes": 0, "replies": 10 },
@@ -64,6 +87,8 @@ const Main = () => {
             {forumData && <MainColum
                 forumData={forumData}
                 forumList={forumList}
+                post={post}
+                setPost={setPost}
                 setFroumList={setFroumList}
                 handleForumdelete={handleForumdelete}
                 handleForumLike={handleForumLike}

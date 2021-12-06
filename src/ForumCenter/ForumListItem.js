@@ -8,49 +8,47 @@ const FromListItem = (props) => {
     let handleForumdislike = props.handleForumdislike;
     let forumData = props.forumData;
 
-   
-    let [post, setPost] = useState(null);
-    useEffect(()=>{
-
-    });
-
-    function showPost(){
-        
-    }
-    // const showPost = (topic, category) => {
-    //     setPost((post) => {
-    //         // let topic = document.getElementById("topic").value;
-    //         // let category = document.getElementById("category").value;
-    //         let newOptionsArray = {};
+    
+    // let [post, setPost] = useState(null);
+    
+    // useEffect(()=>{
+    //     showPost(forumData);
+    //     console.log(post);      
+    // },[]);
+    
+    // function showPost(forumData) {
+    //     let topic = document.getElementById("topic").value;
+    //     let category = document.getElementById("category").value;
+    //     let newPost = {};
     //         Object.keys(forumData).find((elem) => {
     //             if (forumData[elem].name === category) {
     //                 // console.log("yes",options[elem]);
-    //                 newOptionsArray = forumData[elem];
+    //                 newPost = forumData[elem];
     //                 return forumData[elem];
     //             }
     //         });
-    //         Object.keys(newOptionsArray).find((elem) => {
-    //             if (newOptionsArray[elem].topicList === topic) {
-    //                 // console.log("yes",options[elem]);
-    //                 newOptionsArray = newOptionsArray[elem];
-    //                 return newOptionsArray[elem];
+    //         Object.keys(newPost).find((elem) => {
+    //             if (newPost[elem].topicList === topic) {
+    //                 newPost = newPost[elem];
+    //                 return newPost[elem];
     //             }
     //         });
-    //         post = newOptionsArray;
-    //        return post;
-    //     });
+    // setPost(newPost);
+    //        console.log(newPost);
     // }
-   
+
+    console.log("======================");
+
     return (
         <section id="forum-list">
-            {forumList.map((frm, index) => (
+            {/* {forumData[0].topicList[1].listPosts.map((frm, index) => (
                 <section className="list-single-item" key={frm.id}>
                     <section className="item-row-info">
                         <label htmlFor="">add icons {frm.id}</label>
                         <input type="text" value={frm["text"]} />
                         <img src="./like-button.png" id="like" alt="like" onClick={() => {
                             handleForumLike(frm, index);
-                            
+
                         }} />
                         <img src="./dislike-icon-5.png" id="dislike"
                             onClick={() => {
@@ -70,7 +68,7 @@ const FromListItem = (props) => {
                         </button>
                     </section>
                 </section>
-            ))}
+            ))} */}
         </section>
     );
 }
