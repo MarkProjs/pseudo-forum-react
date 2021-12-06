@@ -45,7 +45,7 @@ const FromListItem = (props) => {
                     <section className="item-row-info">
                         <label htmlFor="">add icons {frm.id}</label>
                         <input type="text" value={frm["text"]} />
-                        <img src="./like-button.png" id="like" alt="like" onClick={() => {
+                        <img src="./like-button.pngvggvfg" id="like" alt="like" onClick={() => {
                             handleForumLike(frm, index);
 
                         }} />

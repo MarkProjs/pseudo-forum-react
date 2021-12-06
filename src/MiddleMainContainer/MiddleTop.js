@@ -58,57 +58,35 @@ const MiddleTop = (props) => {
 				optionTopic.innerText = `${tpc.topic_title}`;
 				topic.appendChild(optionTopic);
 				topic.addEventListener('click', () => {
-					showPost(forumData);
+					showPost(tpc);
 				});
 			});
 		}
 	}
 
-// 	function showPost(tpc) {
-// 		let topic = document.getElementById("topic");
-// 		let newPost =[];
-		
-// 		Object.keys(tpc).find((elem)=>{
-// 			if(tpc.topic_title===topic.value){
-// 				newPost = tpc["listPosts"];
-// 				return  tpc["listPosts"];
-// 			}
-// 		});
-// 		newPost.map((elem)=>{
-// 			console.log(newPost[elem],"lllllll");
-// 			// let section = document.createElement('section');
-// 			// forumlist.appendChild(section);
-// 			// section.innerHTML=`${
-// 			// 	<button>${elem.id} </button>
-// 			// }`
-// 		});
-// 	}
-useEffect(()=>[
-	setPost(post)
-],[post]);
-function createElem(newPost){
-	// console.log(newPost,"hhhhh");
-	let forumlist = document.getElementById("forum-list");
+function createMiddlecPost(newPost){
 	
-    Object.keys(newPost).map((elem)=>{
-		console.log(newPost[elem]);
-		let section = document.createElement("section");
-		forumlist.appendChild(section);
-		forumlist.innerHTML=`<section className="list-single-item" key=>
-					<section className="item-row-info">
-                        <label htmlFor="">add icons </label>
-                        <input type="text" value={} />
-                        <img src="./like-button.png" id="like" alt="like" onClick={() => {
+	// let forumlist = document.getElementById("forum-list");
+	
+    // Object.keys(newPost).map((elem)=>{
+	// 	console.log(newPost[elem]);
+	// 	let section = document.createElement("section");
+	// 	forumlist.appendChild(section);
+	// 	forumlist.innerHTML=`<section className="list-single-item" key=>
+	// 				<section className="item-row-info">
+    //                     <label htmlFor="">add icons ${newPost.topicList[0]} </label>
+    //                     <input type="text" value={} />
+    //                     <img src="./like-button.png" id="like" alt="like" onClick={() => {
                            
 
-                        }} />
-                        <img src="./dislike-icon-5.png" id="dislike"
-                            onClick={() => {
+    //                     }} />
+    //                     <img src="./dislike-icon-5.png" id="dislike"
+    //                         onClick={() => {
                               
-                            }} alt="dislike" />
-                    </section>
-		</section>`;
-	})
+    //                         }} alt="dislike" />
+    //                 </section>
+	// 	</section>`;
+	// })
 }
 function showPost(forumData) {
         let topic = document.getElementById("topic").value;
@@ -122,25 +100,25 @@ function showPost(forumData) {
                 }
             });
 
-			console.log(newPost);
+			console.log(newPost.topicList);
     //  let nesListPost = {};
 
-    //         Object.keys(newPost).find((elem) => {
-    //             if (newPost.topicList.topic_title === topic) {
-    //                 newPost = newPost.topicList.topic_title;
-    //                 return newPost[elem];
-    //             }
-    //         });
+            Object.keys(newPost).map(() => {
+                let topicls = newPost["topicList"];
+				// topicls.find((elem)=>{
+				// 	console.log(topicls[elem], "now, I'm here");
+				// })
+				console.log(topicls[0], "I'm here");
+            });
 
     setPost(newPost);
         //    console.log(newPost,"=========");
 		//    let topicTag = document.getElementById("topic");
 		//    topicTag.addEventListener('click', () => {
-			createElem(newPost);
+			createMiddlecPost(newPost)
 		// });
 		console.log(post);
     }
-	
 
 	return (
 		<section id="middle-top">

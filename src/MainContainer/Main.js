@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 
 
 const Main = () => {
-    
     let [forumData, setFroumData] = useState(null);
     let [post, setPost] = useState(null);
     //npx json-server --watch data/forum.json --port 3001
@@ -25,7 +24,7 @@ const Main = () => {
 
         }).catch(err => console.log(err.message));
     }, []);
-
+  
 //     useEffect(()=>{
 //     showPost(forumData);
 // })
