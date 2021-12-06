@@ -56,6 +56,58 @@ const MiddleTop = (props) => {
 		});
 	}
 	
+    Object.keys(newPost).map((elem)=>{
+		console.log(newPost[elem]);
+		let section = document.createElement("section");
+		forumlist.appendChild(section);
+		forumlist.innerHTML=`<section className="list-single-item" key=>
+					<section className="item-row-info">
+                        <label htmlFor="">add icons </label>
+                        <input type="text" value={} />
+                        <img src="./like-button.png" id="like" alt="like" onClick={() => {
+                           
+
+                        }} />
+                        <img src="./dislike-icon-5.png" id="dislike"
+                            onClick={() => {
+                              
+                            }} alt="dislike" />
+                    </section>
+		</section>`;
+	})
+}
+function showPost(forumData) {
+        let topic = document.getElementById("topic").value;
+        let category = document.getElementById("category").value;
+        let newPost = {};
+            Object.keys(forumData).find((elem) => {
+                if (forumData[elem].name === category) {
+                    // console.log("yes",options[elem]);
+                    newPost = forumData[elem];
+                    return forumData[elem];
+                }
+            });
+
+			console.log(newPost);
+    //  let nesListPost = {};
+
+    //         Object.keys(newPost).find((elem) => {
+    //             if (newPost.topicList.topic_title === topic) {
+    //                 newPost = newPost.topicList.topic_title;
+    //                 return newPost[elem];
+    //             }
+    //         });
+
+    setPost(newPost);
+        //    console.log(newPost,"=========");
+		//    let topicTag = document.getElementById("topic");
+		//    topicTag.addEventListener('click', () => {
+			createElem(newPost);
+		// });
+		console.log(post);
+    }
+	
+
 	return (
 		<section id="middle-top">
 
@@ -78,6 +130,6 @@ const MiddleTop = (props) => {
 
 		</section>
 	);
-}
+			}
 
 export default MiddleTop;

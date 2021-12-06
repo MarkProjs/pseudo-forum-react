@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 
 const FromListItem = (props) => {
-    let forumList = props.forumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
