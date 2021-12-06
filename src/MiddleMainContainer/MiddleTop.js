@@ -65,10 +65,12 @@ const MiddleTop = (props) => {
 	}
 
 	function createMiddlecPost(newPost) {
-
 		let forumlist = document.getElementById("forum-list");
+		let oldSectionList = document.getElementsByClassName("list-single-item");
+		for (let i = 0; i < oldSectionList.length; i++) {
+			oldSectionList[i].remove();
+		}
 		newPost.map((frm, index) => {
-			let text = frm.text;
 			let sectionList = document.createElement('section');
 			sectionList.className="list-single-item";
 			forumlist.appendChild(sectionList);
@@ -78,7 +80,42 @@ const MiddleTop = (props) => {
 			item2.className="item-row-info";
 			sectionList.appendChild(item1);
 			sectionList.appendChild(item2);
+			//first part
+			let label1 = document.createElement("label");
+			label1.innerText=`add icons ${frm.id}`;
+			let input1 = document.createElement("input");
+			input1.type="text";
+			input1.value=`${frm.text}`;
+			let likeimg = document.createElement("img");
+			likeimg.src="./like-button.png";
+			likeimg.id="like";
+			likeimg.alt="like";
+			let disLike = document.createElement("img");
+			disLike.src="./dislike-icon-5.png";
+			disLike.id="dislike";
+			disLike.alt="disLike";
+			item1.appendChild(label1);
+			item1.appendChild(input1);
+			item1.appendChild(likeimg);
+			item1.appendChild(disLike);
+
+			//second part
 			console.log(frm);
+
+			let label2 = document.createElement("label");
+			label2.innerText=`by: ${frm.author}`;
+			let labelDate= document.createElement("label");
+			labelDate.innerText=`${frm.date}`;
+			let labelLike = document.createElement("label");
+			labelLike.className="likesAndDislike";
+			labelLike.innerText=`Likes: ${frm.likes}`
+			let btn = document.createElement("button");
+			btn.className="forum-delete";
+			btn.innerText="delete";
+			item2.appendChild(label2);
+			item2.appendChild(labelDate);
+			item2.appendChild(labelLike);
+			item2.appendChild(btn);
 		// 	forumlist.innerHTML =`
 		// 	<section className="list-single-item" key={$frm.id}>
 		// 		<section className="item-row-info">
