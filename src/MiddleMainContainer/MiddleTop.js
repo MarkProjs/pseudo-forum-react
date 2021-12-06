@@ -16,6 +16,7 @@ const MiddleTop = (props) => {
 		let selectoption = document.createElement('option');
 		selectoption.innerText = "Select a category";
 		category.appendChild(selectoption);
+		
 		Object.keys(options).forEach((key) => {
 			let childNode = document.createElement('option');
 			childNode.setAttribute("value", `${options[key].name}`);
