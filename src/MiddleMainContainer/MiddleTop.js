@@ -22,7 +22,12 @@ const MiddleTop = (props) => {
 		let selectoption = document.createElement('option');
 		selectoption.innerText = "Select a category";
 		category.appendChild(selectoption);
+<<<<<<< HEAD
+		
+		Object.keys(options).forEach((key) => {
+=======
 		forumData.map((elem) => {
+>>>>>>> d2829ad0ccb4d61d3fb2c17a5d0bf5e2be2ddecc
 			let childNode = document.createElement('option');
 			childNode.setAttribute("value", `${elem.name}`);
 			childNode.innerText = `${elem.name}`;
