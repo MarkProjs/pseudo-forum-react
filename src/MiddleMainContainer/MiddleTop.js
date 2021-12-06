@@ -66,7 +66,7 @@ const MiddleTop = (props) => {
 
 function createMiddlecPost(newPost){
 	
-	// let forumlist = document.getElementById("forum-list");
+	let forumlist = document.getElementById("forum-list");
 	
     // Object.keys(newPost).map((elem)=>{
 	// 	console.log(newPost[elem]);
@@ -88,37 +88,26 @@ function createMiddlecPost(newPost){
 	// 	</section>`;
 	// })
 }
-function showPost(forumData) {
+let [test, setTest]= useState(null);
+useEffect(()=>{
+	setTest(test);
+},[test])
+function showPost(tpc) {
         let topic = document.getElementById("topic").value;
-        let category = document.getElementById("category").value;
-        let newPost = {};
-            Object.keys(forumData).find((elem) => {
-                if (forumData[elem].name === category) {
-                    // console.log("yes",options[elem]);
-                    newPost = forumData[elem];
-                    return forumData[elem];
-                }
-            });
+        let newPost = [];
+		Object.keys(tpc).find(()=>{
+			if(tpc.topic_title===topic){
+				newPost = tpc.listPosts;
+				return tpc.listPosts;
+			}
+		})
 
-			console.log(newPost.topicList);
-    //  let nesListPost = {};
+		console.log(newPost, "I'm new post");
+		createMiddlecPost(newPost);
 
-            Object.keys(newPost).map(() => {
-                let topicls = newPost["topicList"];
-				// topicls.find((elem)=>{
-				// 	console.log(topicls[elem], "now, I'm here");
-				// })
-				console.log(topicls[0], "I'm here");
-            });
-
-    setPost(newPost);
-        //    console.log(newPost,"=========");
-		//    let topicTag = document.getElementById("topic");
-		//    topicTag.addEventListener('click', () => {
-			createMiddlecPost(newPost)
-		// });
-		console.log(post);
-    }
+		setTest(test => newPost);
+		return newPost;
+}
 
 	return (
 		<section id="middle-top">

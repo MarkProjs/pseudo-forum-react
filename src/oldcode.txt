@@ -17,3 +17,30 @@
 // 			// }`
 // 		});
 // 	}
+
+Object.keys(forumData).find((elem) => {
+                if (forumData[elem].name === category) {
+                    // console.log("yes",options[elem]);
+                    newPost = forumData[elem];
+                    return forumData[elem];
+                }
+            });
+
+			console.log(newPost.topicList);
+    //  let nesListPost = {};
+
+            Object.keys(newPost).map(() => {
+                let topicls = newPost["topicList"];
+				// topicls.find((elem)=>{
+				// 	console.log(topicls[elem], "now, I'm here");
+				// })
+				console.log(topicls[0], "I'm here");
+            });
+
+    setPost(newPost);
+        //    console.log(newPost,"=========");
+		//    let topicTag = document.getElementById("topic");
+		//    topicTag.addEventListener('click', () => {
+			createMiddlecPost(newPost)
+		// });
+		console.log(post);
