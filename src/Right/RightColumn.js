@@ -3,15 +3,20 @@ import RecentPosts from "../RightContainer/RecentPosts";
 import StatsPsts from "../RightContainer/StatsPosts";
 
 const RightColumn = (props) => {
-    let forumList = props.forumList;
+
+    let forumData = props.forumData;
 
     return ( 
         <section className="right-column">
             <RankedTopics 
-               forumList = {forumList}
+                forumData={forumData}
             />
-            <RecentPosts />
-            <StatsPsts />
+            <RecentPosts
+                forumData={forumData}
+            />
+            <StatsPsts 
+                forumData={forumData}
+            />
         </section>
      );
 }
