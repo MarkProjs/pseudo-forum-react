@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 const MiddleTop = (props) => {
 	let forumData = props.forumData;
 	let dropdown_row = document.getElementsByClassName("dropdown-row");
-	let [post, setPost]=useState(null);
-	
+	let [post, setPost] = useState(null);
+
 	useEffect(() => {
 		addBaseOptions(forumData);
 	});
@@ -64,39 +64,50 @@ const MiddleTop = (props) => {
 		}
 	}
 
-function createMiddlecPost(newPost){
-	
-	let forumlist = document.getElementById("forum-list");
-	
-    // Object.keys(newPost).map((elem)=>{
-	// 	console.log(newPost[elem]);
-	// 	let section = document.createElement("section");
-	// 	forumlist.appendChild(section);
-	// 	forumlist.innerHTML=`<section className="list-single-item" key=>
-	// 				<section className="item-row-info">
-    //                     <label htmlFor="">add icons ${newPost.topicList[0]} </label>
-    //                     <input type="text" value={} />
-    //                     <img src="./like-button.png" id="like" alt="like" onClick={() => {
-                           
+	function createMiddlecPost(newPost) {
 
-    //                     }} />
-    //                     <img src="./dislike-icon-5.png" id="dislike"
-    //                         onClick={() => {
-                              
-    //                         }} alt="dislike" />
-    //                 </section>
-	// 	</section>`;
-	// })
-}
-let [test, setTest]= useState(null);
-useEffect(()=>{
-	setTest(test);
-},[test])
-function showPost(tpc) {
-        let topic = document.getElementById("topic").value;
-        let newPost = [];
-		Object.keys(tpc).find(()=>{
-			if(tpc.topic_title===topic){
+		let forumlist = document.getElementById("forum-list");
+		newPost.map((frm, index) => {
+			let text = frm.text;
+			let sectionList = document.createElement('section');
+			sectionList.className="list-single-item";
+			forumlist.appendChild(sectionList);
+			let item1 = document.createElement("section");
+			item1.className="item-row-info";
+			let item2 = document.createElement("section");
+			item2.className="item-row-info";
+			sectionList.appendChild(item1);
+			sectionList.appendChild(item2);
+			console.log(frm);
+		// 	forumlist.innerHTML =`
+		// 	<section className="list-single-item" key={$frm.id}>
+		// 		<section className="item-row-info">
+		// 			<label htmlFor="">add icons ${frm.id}</label>
+		// 			<input type="text" value="${text}"/>
+		// 			<img src="./like-button.pngvggvfg" id="like" alt="like"/>
+		// 			<img src="./dislike-icon-5.png" id="dislike" alt="dislike" />
+		// 		</section>
+
+		// 		<section className="item-row-info">
+		// 			<label htmlFor="">by: ${frm["author"]}</label>
+		// 			<label htmlFor="">${frm["date"]}</label>
+		// 			<label className="likesAndDislike" htmlFor="">Likes: ${frm.likes}</label>
+		// 			<button className="forum-delete">delete</button>
+		// 		</section>
+		// </section>`;
+		});
+
+
+	}
+	let [test, setTest] = useState(null);
+	useEffect(() => {
+		setTest(test);
+	}, [test])
+	function showPost(tpc) {
+		let topic = document.getElementById("topic").value;
+		let newPost = [];
+		Object.keys(tpc).find(() => {
+			if (tpc.topic_title === topic) {
 				newPost = tpc.listPosts;
 				return tpc.listPosts;
 			}
@@ -107,7 +118,7 @@ function showPost(tpc) {
 
 		setTest(test => newPost);
 		return newPost;
-}
+	}
 
 	return (
 		<section id="middle-top">
@@ -119,7 +130,7 @@ function showPost(tpc) {
 			</section>
 			<section class="dropdown-row">
 				<label htmlFor="topic">Related Topics</label>
-				<select name="topic" id="topic" onClick={()=>{
+				<select name="topic" id="topic" onClick={() => {
 					// showPost(forumData);
 				}}>
 					<option value="">Select a topic</option>

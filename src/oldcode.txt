@@ -44,3 +44,25 @@ Object.keys(forumData).find((elem) => {
 			createMiddlecPost(newPost)
 		// });
 		console.log(post);
+
+
+
+        // Object.keys(newPost).map((elem)=>{
+	// 	console.log(newPost[elem]);
+	// 	let section = document.createElement("section");
+	// 	forumlist.appendChild(section);
+	// 	forumlist.innerHTML=`<section className="list-single-item" key=>
+	// 				<section className="item-row-info">
+    //                     <label htmlFor="">add icons ${newPost.topicList[0]} </label>
+    //                     <input type="text" value={} />
+    //                     <img src="./like-button.png" id="like" alt="like" onClick={() => {
+                           
+
+    //                     }} />
+    //                     <img src="./dislike-icon-5.png" id="dislike"
+    //                         onClick={() => {
+                              
+    //                         }} alt="dislike" />
+    //                 </section>
+	// 	</section>`;
+	// })
