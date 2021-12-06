@@ -1,0 +1,19 @@
+// 	function showPost(tpc) {
+// 		let topic = document.getElementById("topic");
+// 		let newPost =[];
+		
+// 		Object.keys(tpc).find((elem)=>{
+// 			if(tpc.topic_title===topic.value){
+// 				newPost = tpc["listPosts"];
+// 				return  tpc["listPosts"];
+// 			}
+// 		});
+// 		newPost.map((elem)=>{
+// 			console.log(newPost[elem],"lllllll");
+// 			// let section = document.createElement('section');
+// 			// forumlist.appendChild(section);
+// 			// section.innerHTML=`${
+// 			// 	<button>${elem.id} </button>
+// 			// }`
+// 		});
+// 	}
