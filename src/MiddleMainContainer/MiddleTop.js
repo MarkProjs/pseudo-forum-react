@@ -140,6 +140,7 @@ function showPost(forumData) {
 		// });
 		console.log(post);
     }
+	
 
 	return (
 		<section id="middle-top">
