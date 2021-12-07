@@ -15,7 +15,6 @@ let nasrForum = getTopicFrom('nasr');
 
     return (  
         <section id="ranked-topics">
-            <h6>Here I think we need table </h6>
             <h4>Ranked Topics</h4> 
                 <label htmlFor="">Topic: </label>
                 <label htmlFor="">Topic: </label> 

@@ -34,8 +34,8 @@ const StatsPsts = () => {
             { userList.map((user)=> (
                 <section className="stats-row">
                   
-                    <label htmlFor="">{user.user_id}</label>
-                    <label htmlFor="">{user.nberPosts}</label>
+                    <label htmlFor="">"title"</label>
+                    <label htmlFor="">"post"</label>
                 </section>
             ) )}
 
