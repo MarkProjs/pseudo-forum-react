@@ -183,7 +183,6 @@ useEffect(()=>{
 			 setTopic(toic);
 			 console.log("我是李吗的topic");
 		 }
-		 console.log(topic,"我是外面的topic");
 	return (
 		<section id="middle-top">
 			<section class="dropdown-row">
