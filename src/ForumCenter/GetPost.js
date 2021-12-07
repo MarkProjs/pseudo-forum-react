@@ -17,19 +17,19 @@ const GetPost = (props) => {
     console.log(count,"2");
     const Test = () => {
         setCount((count) => {
-            value: showPost(forumData);
+            count: showPost(forumData);
             console.log(count, "我在里面没出啦");
             return count;
         })
     }
 
-console.log(count.value["id"], "窝在最下面");
+console.log(count.value["id"], "窝在最下面是id");
     return (
         <section>
-            {forumData[0].topicList[1].listPosts.map((frm, index) => (
+            {count.value.listPosts.map((frm, index) => (
                 <section className="list-single-item" key={frm.id}>
                     <section className="item-row-info">
-                        <label htmlFor="">add icons {frm.id}  count: {count["id"]} 1</label>
+                        <label htmlFor="">add icons {frm.id}</label>
                         <input type="text" value={frm.text} />
                         <img src="./like-button.png" id="like" alt="like" onClick={() => {
                             handleForumLike(frm, index);
@@ -49,7 +49,7 @@ console.log(count.value["id"], "窝在最下面");
                             onClick={() => { 
                                 handleForumdelete(frm.id);
                                Test();
-                               console.log(count["id"], "name");
+                               console.log(count.value["name"], "name");
                             }}>
                             delete
                         </button>
