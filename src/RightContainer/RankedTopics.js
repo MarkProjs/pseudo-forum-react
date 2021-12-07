@@ -8,6 +8,7 @@ const RankedTopics = (props) => {
     })
     function  getTopicFrom(forumData){
         let author = forumData.filter((forumId)=>{ 
+           
         return  (forumId.resp.toLowerCase() === forumData); 
         });
       return author;
