@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 const Main = () => {
     let [forumData, setFroumData] = useState(null);
-    let [post, setPost] = useState(null);
+    let [post, setPost]= useState(null);
     //npx json-server --watch data/forum.json --port 3001
     console.log("npx json-server --watch data/forum.json --port 3001");
     useEffect(() => {
@@ -20,19 +20,13 @@ const Main = () => {
             }
         }).then(data => {
             setFroumData(data);
-            // showPost(data);
-
+        
         }).catch(err => console.log(err.message));
     }, []);
-  
-//     useEffect(()=>{
-//     showPost(forumData);
-// })
-    function showPost(forumData) {
-        let topicName  = document.getElementById
-    }    
-    
-    
+
+
+
+       
   
     function handleForumdelete(frmId) {
         console.log("delete forum", frmId);
