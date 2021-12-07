@@ -30,9 +30,9 @@ const Main = () => {
   
     function handleForumdelete(frmId) {
         console.log("delete forum", frmId);
-        setFroumList(forumList.filter((frm) => {
-            return frm.id !== frmId;
-        }));
+        // setFroumList(forumList.filter((frm) => {
+        //     return frm.id !== frmId;
+        // }));
     }
 
     function handleForumLike(frm, index) {
@@ -64,14 +64,14 @@ const Main = () => {
             <LeftColumn />
             {forumData && <MainColum
                 forumData={forumData}
-                forumList={forumList}
+                // forumList={forumList}
                 handleForumdelete={handleForumdelete}
                 handleForumLike={handleForumLike}
                 handleForumdislike={handleForumdislike}
 
             />}
             <RightColumn
-                forumList={forumList}
+                // forumList={forumList}
             />
         </section>
     );

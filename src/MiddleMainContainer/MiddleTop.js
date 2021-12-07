@@ -68,13 +68,14 @@ const MiddleTop = (props) => {
 		let forumlist = document.getElementById("forum-list");
 		
 		
+		
 		// let middle_container = document.getElementById("middle-container");
 		// let newForumlist = document.createElement("section");
 		// newForumlist.id = "forum-list";
 		// middle_container.appendChild(newForumlist);
 		// console.log(newForumlist);
 		newPost.map((frm, index) => {
-	
+			
 			let sectionList = document.createElement('section');
 			sectionList.className = "list-single-item";
 			forumlist.appendChild(sectionList);
@@ -167,9 +168,22 @@ const MiddleTop = (props) => {
 				return tpc.listPosts;
 			}
 		})
-		
 		createMiddlecPost(newPost);
+
+		return newPost;
 	}
+useEffect(()=>{
+	let toic = document.getElementById("topic");
+	toic.addEventListener('click', Topic);
+	// Topic(); 
+});
+	let [topic, setTopic] = useState(null);
+		const Topic=()=>{
+			let toic = document.getElementById("topic").value;
+			 setTopic(toic);
+			 console.log("我是李吗的topic");
+		 }
+		 console.log(topic,"我是外面的topic");
 	return (
 		<section id="middle-top">
 			<section class="dropdown-row">
@@ -182,6 +196,7 @@ const MiddleTop = (props) => {
 				<label htmlFor="topic">Related Topics</label>
 				<select name="topic" id="topic" onClick={() => {
 					// showPost(forumData);
+					Topic();
 				}}>
 					<option value="">Select a topic</option>
 				</select>
