@@ -168,7 +168,7 @@ const MiddleTop = (props) => {
 				return tpc.listPosts;
 			}
 		})
-		createMiddlecPost(newPost);
+		// createMiddlecPost(newPost);
 
 		return newPost;
 	}

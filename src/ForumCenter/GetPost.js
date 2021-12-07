@@ -1,32 +1,40 @@
 import React, { useEffect, useState } from 'react';
 const GetPost = (props) => {
     let showPost = props.showPost;
-    let handleForumdelete = props.handleForumdelete;
+    // let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
     let forumData = props.forumData;
-    let [count, setCount] = useState({value:forumData[0].topicList[0]});
-   console.log(forumData[0].topicList[0],"我是");
+    let [count, setCount] = useState(forumData[0].topicList[0]);
+    
+    function handleForumdelete(frmId) {
+        console.log(frmId,"frmId");
+        // setCount(count.listPosts.filter((frm)=>{
+        //     return frm.id !== frmId;
+        // }));
+    }
+
    
     console.log(count,"1");
     useEffect(()=>{
         console.log(count,"shlimian");
-        Test();
+        // Test();
         console.log(count,"xialimian");
-    },[])
+    },[count])
     console.log(count,"2");
+    
     const Test = () => {
         setCount((count) => {
-            count: showPost(forumData);
+            count= showPost(forumData);
             console.log(count, "我在里面没出啦");
             return count;
         })
     }
 
-console.log(count.value["id"], "窝在最下面是id");
+console.log(count["id"], "窝在最下面是id");
     return (
         <section>
-            {count.value.listPosts.map((frm, index) => (
+            {count.listPosts.map((frm, index) => (
                 <section className="list-single-item" key={frm.id}>
                     <section className="item-row-info">
                         <label htmlFor="">add icons {frm.id}</label>
@@ -47,9 +55,9 @@ console.log(count.value["id"], "窝在最下面是id");
                         <label className="likesAndDislike" htmlFor="">Likes: {frm.likes}</label>
                         <button className="forum-delete"
                             onClick={() => { 
-                                handleForumdelete(frm.id);
+                                // handleForumdelete(frm.id);
                                Test();
-                               console.log(count.value["name"], "name");
+                               console.log(count["topic_title"], "name");
                             }}>
                             delete
                         </button>
