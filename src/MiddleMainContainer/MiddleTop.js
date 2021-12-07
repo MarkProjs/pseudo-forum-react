@@ -66,80 +66,98 @@ const MiddleTop = (props) => {
 
 	function createMiddlecPost(newPost) {
 		let forumlist = document.getElementById("forum-list");
-		let oldSectionList = document.getElementsByClassName("list-single-item");
-		for (let i = 0; i < oldSectionList.length; i++) {
-			oldSectionList[i].remove();
-		}
+		
+		
+		// let middle_container = document.getElementById("middle-container");
+		// let newForumlist = document.createElement("section");
+		// newForumlist.id = "forum-list";
+		// middle_container.appendChild(newForumlist);
+		// console.log(newForumlist);
 		newPost.map((frm, index) => {
+	
 			let sectionList = document.createElement('section');
-			sectionList.className="list-single-item";
+			sectionList.className = "list-single-item";
 			forumlist.appendChild(sectionList);
 			let item1 = document.createElement("section");
-			item1.className="item-row-info";
+			item1.className = "item-row-info";
 			let item2 = document.createElement("section");
-			item2.className="item-row-info";
+			item2.className = "item-row-info";
 			sectionList.appendChild(item1);
 			sectionList.appendChild(item2);
 			//first part
 			let label1 = document.createElement("label");
-			label1.innerText=`add icons ${frm.id}`;
+			label1.innerText = `add icons ${frm.id}`;
 			let input1 = document.createElement("input");
-			input1.type="text";
-			input1.value=`${frm.text}`;
+			input1.type = "text";
+			input1.value = `${frm.text}`;
 			let likeimg = document.createElement("img");
-			likeimg.src="./like-button.png";
-			likeimg.id="like";
-			likeimg.alt="like";
+			likeimg.src = "./like-button.png";
+			likeimg.id = "like";
+			likeimg.alt = "like";
+			likeimg.addEventListener('click', ()=>{
+				handleForumLike(frm,index);
+			})
 			let disLike = document.createElement("img");
-			disLike.src="./dislike-icon-5.png";
-			disLike.id="dislike";
-			disLike.alt="disLike";
+			disLike.src = "./dislike-icon-5.png";
+			disLike.id = "dislike";
+			disLike.alt = "disLike";
+			disLike.addEventListener('click', ()=>{
+				handleForumdislike(frm, index);
+			})
 			item1.appendChild(label1);
 			item1.appendChild(input1);
 			item1.appendChild(likeimg);
 			item1.appendChild(disLike);
 
-			//second part
-			console.log(frm);
-
 			let label2 = document.createElement("label");
-			label2.innerText=`by: ${frm.author}`;
-			let labelDate= document.createElement("label");
-			labelDate.innerText=`${frm.date}`;
+			label2.innerText = `by: ${frm.author}`;
+			let labelDate = document.createElement("label");
+			labelDate.innerText = `${frm.date}`;
 			let labelLike = document.createElement("label");
-			labelLike.className="likesAndDislike";
-			labelLike.innerText=`Likes: ${frm.likes}`
+			labelLike.className = "likesAndDislike";
+			labelLike.innerText = `Likes: ${frm.likes}`
 			let btn = document.createElement("button");
-			btn.className="forum-delete";
-			btn.innerText="delete";
+			btn.className = "forum-delete";
+			btn.innerText = "delete";
+			btn.addEventListener("click", ()=>{
+				
+			    handleForumdelete(frm);
+			})
 			item2.appendChild(label2);
 			item2.appendChild(labelDate);
 			item2.appendChild(labelLike);
 			item2.appendChild(btn);
-		// 	forumlist.innerHTML =`
-		// 	<section className="list-single-item" key={$frm.id}>
-		// 		<section className="item-row-info">
-		// 			<label htmlFor="">add icons ${frm.id}</label>
-		// 			<input type="text" value="${text}"/>
-		// 			<img src="./like-button.pngvggvfg" id="like" alt="like"/>
-		// 			<img src="./dislike-icon-5.png" id="dislike" alt="dislike" />
-		// 		</section>
 
-		// 		<section className="item-row-info">
-		// 			<label htmlFor="">by: ${frm["author"]}</label>
-		// 			<label htmlFor="">${frm["date"]}</label>
-		// 			<label className="likesAndDislike" htmlFor="">Likes: ${frm.likes}</label>
-		// 			<button className="forum-delete">delete</button>
-		// 		</section>
-		// </section>`;
 		});
 
 
 	}
-	let [test, setTest] = useState(null);
-	useEffect(() => {
-		setTest(test);
-	}, [test])
+	
+    function handleForumdelete(frm) {
+        // console.log("delete forum", frm);
+		// newPost.filter((frm)=>{
+        //   return frm.id !== frmId;
+		// })
+        // setFroumData(forumData.filter((frm) => {
+        //     return frm.id !== frmId;
+        // }));
+    }
+
+    function handleForumLike(frm, index) {
+        // console.log(posts);
+        let likeId = document.getElementsByClassName("likesAndDislike");
+        frm.likes = frm.likes + 1;
+        likeId[index].innerText = "Likes: " + `${frm.likes++}`;
+        frm.likes = frm.likes - 1;
+    }
+    
+    function handleForumdislike(frm, index) {
+        let likeId = document.getElementsByClassName("likesAndDislike");
+        frm.likes = frm.likes - 1;
+        likeId[index].innerText = "Likes: " + `${frm.likes--}`;
+        frm.likes = frm.likes + 1;
+    }
+    
 	function showPost(tpc) {
 		let topic = document.getElementById("topic").value;
 		let newPost = [];
@@ -149,14 +167,9 @@ const MiddleTop = (props) => {
 				return tpc.listPosts;
 			}
 		})
-
-		console.log(newPost, "I'm new post");
+		
 		createMiddlecPost(newPost);
-
-		setTest(test => newPost);
-		return newPost;
 	}
-
 	return (
 		<section id="middle-top">
 			<section class="dropdown-row">
