@@ -24,15 +24,13 @@ const Main = () => {
         }).catch(err => console.log(err.message));
     }, []);
 
-
-
-       
+     
   
     function handleForumdelete(frmId) {
         console.log("delete forum", frmId);
-        // setFroumList(forumList.filter((frm) => {
-        //     return frm.id !== frmId;
-        // }));
+        setFroumList(forumList.filter((frm) => {
+            return frm.id !== frmId;
+        }));
     }
 
     function handleForumLike(frm, index) {
