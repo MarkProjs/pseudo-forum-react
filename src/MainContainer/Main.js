@@ -30,41 +30,48 @@ const Main = () => {
   
     function handleForumdelete(frmId) {
         console.log("delete forum", frmId);
-        setFroumData(forumData.filter((frm) => {
+        setFroumList(forumList.filter((frm) => {
             return frm.id !== frmId;
         }));
     }
 
     function handleForumLike(frm, index) {
-        // console.log(posts);
         let likeId = document.getElementsByClassName("likesAndDislike");
         frm.likes = frm.likes + 1;
-        likeId[index].innerText = "Likes: " + `${frm.likes++}`;
+        likeId[index].innerText = `Likes: ${frm.likes++}`;
         frm.likes = frm.likes - 1;
     }
-    
+
     function handleForumdislike(frm, index) {
         let likeId = document.getElementsByClassName("likesAndDislike");
         frm.likes = frm.likes - 1;
-        likeId[index].innerText = "Likes: " + `${frm.likes--}`;
+        likeId[index].innerText = `Likes: ${frm.likes--}`;
         frm.likes = frm.likes + 1;
     }
-    
+    // function addOptions(options) {
+    //     console.log(options);
+    //     let selectList = document.getElementsByTagName('select');
+    //     for (let i = 0; i < selectList.length; i++) {
+    //         Object.keys(options).forEach((key) => {
+    //             let childNode = document.createElement('option');
+    //             childNode.innerText = `${options[key].name}`;
+    //             selectList[i].appendChild(childNode);
+    //         });
+    //     }
+    // }
     return (
         <section id="main-content">
             <LeftColumn />
             {forumData && <MainColum
                 forumData={forumData}
-                post={post}
-                setPost={setPost}
+                forumList={forumList}
                 handleForumdelete={handleForumdelete}
                 handleForumLike={handleForumLike}
                 handleForumdislike={handleForumdislike}
 
             />}
             <RightColumn
-                forumData={forumData}
-                
+                forumList={forumList}
             />
         </section>
     );

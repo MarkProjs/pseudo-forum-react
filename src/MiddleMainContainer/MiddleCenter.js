@@ -1,6 +1,7 @@
 import ForumListItem from "../ForumCenter/ForumListItem";
 
 const MiddleCenter = (props) => {
+    let forumList = props.forumList;
     let handleForumdelete = props.handleForumdelete;
     let handleForumLike = props.handleForumLike;
     let handleForumdislike = props.handleForumdislike;
@@ -10,6 +11,7 @@ const MiddleCenter = (props) => {
             <section id="middle-container">
             <ForumListItem
                             forumData = {forumData} 
+                           forumList={forumList}
                            handleForumdelete = {handleForumdelete}
                            handleForumLike = {handleForumLike}
                            handleForumdislike={handleForumdislike}
