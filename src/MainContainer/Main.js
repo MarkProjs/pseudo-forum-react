@@ -68,7 +68,7 @@ const Main = () => {
 
             />}
             <RightColumn
-                forumList={forumData}
+                forumData={forumData}
             />
         </section>
     );

@@ -18,7 +18,7 @@ const FromListItem = (props) => {
             console.log(count, "wozailimian");
             return count;
         });
-   },[showPost(forumData)]);
+   },[/*showPost(forumData)*/]);
    
     // const Test = () => {
     //     setCount((count) => {
