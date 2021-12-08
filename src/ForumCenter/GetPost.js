@@ -31,7 +31,6 @@ const GetPost = (props) => {
         })
     }
 
-console.log(count["id"], "窝在最下面是id");
     return (
         <section>
             {count.listPosts.map((frm, index) => (
