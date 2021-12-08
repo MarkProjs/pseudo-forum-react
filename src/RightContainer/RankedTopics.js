@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const RankedTopics = (props) => {
     let forumData = props.forumData;
+
     useEffect(()=>{
         getTopicFrom(forumData);
     })
@@ -29,8 +30,8 @@ const RankedTopics = (props) => {
 
     return (  
         <section id="ranked-topics">
-            <h4>Ranked Topics</h4> 
-                <label htmlFor="">Topic:</label>
+          {}  <h4>Ranked Topics</h4> 
+                <label htmlFor="">Author: </label>
                 <label htmlFor="">Topic: </label> 
                 <label htmlFor="">Topic: </label> 
         </section>

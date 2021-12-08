@@ -19,7 +19,7 @@ const Main = () => {
                 return resp.json();
             }
         }).then(data => {
-            setFroumData(data);
+            setFroumData(data.users);
         
         }).catch(err => console.log(err.message));
     }, []);
